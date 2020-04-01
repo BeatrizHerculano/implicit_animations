@@ -1,8 +1,4 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
-
-import '../widgets/icon_card.dart';
 
 class ListAnimation extends StatefulWidget {
   @override
@@ -12,6 +8,7 @@ class ListAnimation extends StatefulWidget {
 class ListAnimationState extends State<ListAnimation> {
   List<String> myList = ['Item 1', 'Item 2', 'Item 3', 'Item 4', 'Item 5'];
   final listKey = GlobalKey<AnimatedListState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,8 +18,8 @@ class ListAnimationState extends State<ListAnimation> {
       body: AnimatedList(
         key: listKey,
         itemBuilder: (context, index, animation) {
-          return RotationTransition(
-              turns: animation,
+          return SizeTransition(
+              sizeFactor: animation,
               child: ListTile(
                 title: Text(myList[index]),
               ));
@@ -35,7 +32,8 @@ class ListAnimationState extends State<ListAnimation> {
         ),
         backgroundColor: Colors.blueAccent,
         onPressed: () {
-          listKey.currentState.insertItem(0, duration: Duration(seconds: 1));
+          listKey.currentState
+              .insertItem(0, duration: Duration(milliseconds: 300));
           myList = ['Item tal', ...myList];
         },
       ),

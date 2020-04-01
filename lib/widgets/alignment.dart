@@ -11,6 +11,7 @@ class AnimatePositionState extends State<AnimatePosition> {
   bool top = true;
   String actionOnTop = 'Cair';
   String actionOnBot = 'Pular';
+
   @override
   Widget build(BuildContext context) {
     return Center(

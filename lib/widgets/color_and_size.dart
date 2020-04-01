@@ -48,13 +48,7 @@ class ColorAndSizeState extends State<ColorAndSize> {
               backgroundColor: Colors.green,
               onPressed: () {
                 setState(() {
-                  duration = 500;
-                  double aux = width + 30;
-                  if (aux < maxWidth) {
-                    width = aux;
-                  } else {
-                    width = maxWidth;
-                  }
+                  width = width + 30;
                 });
               },
             ),
