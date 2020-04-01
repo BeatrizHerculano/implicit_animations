@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:implicit_animation_examples/pages/fade_effect.dart';
+import 'package:implicit_animation_examples/pages/list_animation.dart';
 import 'package:implicit_animation_examples/pages/shape_animation.dart';
 
 void main() => runApp(MyApp());
@@ -16,6 +17,7 @@ class MyApp extends StatelessWidget {
         "/": (context) => MyHomePage(title: 'Flutter Demo Home Page'),
         "/Fade": (context) => FadeEffect(),
         "/Shape": (context) => ShapeAnimation(),
+        "/List": (context) => ListAnimation(),
       },
     );
   }
@@ -48,7 +50,11 @@ class _MyHomePageState extends State<MyHomePage> {
             FlatButton(
                 color: Colors.blueAccent,
                 onPressed: () => {Navigator.of(context).pushNamed("/Shape")},
-                child: Text("Animate Shape"))
+                child: Text("Animate Shape")),
+            FlatButton(
+                color: Colors.blueAccent,
+                onPressed: () => {Navigator.of(context).pushNamed("/List")},
+                child: Text("Animated List"))
           ],
         ),
       ),
